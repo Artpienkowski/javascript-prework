@@ -1,4 +1,6 @@
-var argButtonName, buttonKamien, buttonNozyce, buttonPapier, 
+var argButtonName, buttonKamien, buttonNozyce, buttonPapier; 
+var playerWinsCount = 0;
+var npcWinsCount = 0;
 
 buttonKamien = document.getElementById('button-rock');
 buttonPapier = document.getElementById('button-paper');
@@ -6,12 +8,13 @@ buttonNozyce = document.getElementById('button-scissors');
 
 function buttonClicked(argButtonName) {
   clearMessages();
+  clearResult();
   console.log(argButtonName + ' został kliknięty');
 
-  var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+  var computerMove, playerMove, randomNumber;
 
     function getMoveName(argMoveId) {
-    console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
+        console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
         if (argMoveId == 1) {
             return 'kamień';
         } else if (argMoveId == 2) {
@@ -25,29 +28,35 @@ function buttonClicked(argButtonName) {
     }
 
     function displayResult(argPlayerMove, argComputerMove) {
-    console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
+        console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
         if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+            playerWinsCount = playerWinsCount + 1;
             printMessage('Wygrywasz!');
         } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+            playerWinsCount = playerWinsCount + 1;
             printMessage('Wygrywasz!');
         } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+            playerWinsCount = playerWinsCount + 1;
             printMessage('Wygrywasz!');
         } else if (argPlayerMove == argComputerMove) {
             printMessage('Remis');
         } else {
+            npcWinsCount = npcWinsCount + 1;
             printMessage('Przegrywasz :(');
         }
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+        printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+        printResult('Wynik gracza: ' + playerWinsCount + ' Wynik komputera: ' + npcWinsCount);
     }
 
-playerMove = argButtonName;
+    
+    playerMove = argButtonName;
 
-console.log('ruch gracza to: ' + playerMove);
-randomNumber = Math.floor(Math.random() * 3 + 1);
-console.log('wylosowana liczba to: ' + randomNumber);
-computerMove = getMoveName(randomNumber);
-console.log('ruch komputera to: ' + computerMove);
-displayResult(playerMove, computerMove);
+    console.log('ruch gracza to: ' + playerMove);
+    randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('wylosowana liczba to: ' + randomNumber);
+    computerMove = getMoveName(randomNumber);
+    console.log('ruch komputera to: ' + computerMove);
+    displayResult(playerMove, computerMove);
 }
 
 buttonKamien.addEventListener('click', function(){ buttonClicked('kamień'); });

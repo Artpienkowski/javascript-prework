@@ -8,12 +8,12 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
-function printMessage(msg){
+function printResult(msg){
 	var div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('result').appendChild(div);
 }
 
-function clearMessages(){
+function clearResult(){
 	document.getElementById('result').innerHTML = '';
 }
