@@ -2,17 +2,37 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kamień, papier, nożyce</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header class="splash">
+        <div class="splash-inner">
+            <h1>Zagrajmy w grę!</h1>
+            <h2>Kamień , papier, nożyce</h2>
+        </div>
+    </header>
+    <section class="zasady">
+        <span>Oto zasady:</span>
+        <ul>
+            <li>1. Spośród poniżej przedstawionych opcji wybierz, który ruch chcesz zagrać</li>
+            <li>2. Kliknij w swój wybór</li>
+            <li>3. Wygraj, zremisuj lub przegraj innej opcji nie ma <i class="fa-solid fa-face-smile-wink"></i></li>
+        </ul>
+    </section>
 	<div class="container">
 		<div id="buttons">
-            <button id="button-rock">Kamień</button>
-            <button id="button-paper">Papier</button>
-            <button id="button-scissors">Nożyce</button>
+            <button id="button-rock"><i class="fa-solid fa-hand-fist"></i></button>
+            <button id="button-paper"><i class="fa-solid fa-hand"></i></button>
+            <button id="button-scissors"><i class="fa-solid fa-hand-scissors"></i></button>
         </div>
 		<div id="messages"></div>
+        <div id="result"></div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

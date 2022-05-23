@@ -1,0 +1,84 @@
+/* Variables */
+$font-header: 'Anton', sans-serif;
+$font-text: 'Titillium Web', sans-serif;
+$color-one: #e67e22;
+$color-two: #f1c40f;
+
+/* Global */
+
+body {
+    margin: 0;
+    text-align: center;
+    background: $color-two;
+    color: $color-one;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: $font-header;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Zasady */
+
+.zasady ul {
+    margin-right: 35px;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+
+button {
+    border-color: #e67e22;
+    border-radius: 50px;
+    height: 79px;
+    width: 79px;
+    background-color: #f1c40f;
+    color: #e67e22;
+    font-size: 40px;
+}
+
+#buttons {
+    border: 2px solid;
+    margin: 0 355px;
+    padding: 20px;
+    letter-spacing: 25px;
+}
+
+/* Messages */
+    #messages {
+        color:brown;
+    }
+
+/* Media */
+
+@media (max-width: 768px) {
+    
+       
+    button {
+        padding: 5px;
+        height: 65px;
+        width: 65px;
+        font-size: 35px;
+    }
+
+    #buttons {
+        margin: 0 25px;
+        letter-spacing: 15px;
+    }
+
+    .zasady ul {
+        margin-right: 40px;
+    }
+
+    
+}
+
+
