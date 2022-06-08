@@ -1,4 +1,4 @@
-var argButtonName; 
+
 var playerWinsCount = 0;
 var npcWinsCount = 0;
 
@@ -10,8 +10,6 @@ function buttonClicked(argButtonName) {
   clearMessages();
   clearResult();
   console.log(argButtonName + ' został kliknięty');
-
-  var computerMove, playerMove, randomNumber;
 
     function getMoveName(argMoveId) {
         console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -49,12 +47,12 @@ function buttonClicked(argButtonName) {
     }
 
     
-    playerMove = argButtonName;
+    const playerMove = argButtonName;
 
     console.log('ruch gracza to: ' + playerMove);
-    randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('wylosowana liczba to: ' + randomNumber);
-    computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
     console.log('ruch komputera to: ' + computerMove);
     displayResult(playerMove, computerMove);
 }
