@@ -1,6 +1,4 @@
 
-var playerWinsCount = 0;
-var npcWinsCount = 0;
 
 const buttonKamien = document.getElementById('button-rock');
 const buttonPapier = document.getElementById('button-paper');
@@ -25,18 +23,20 @@ function buttonClicked(argButtonName) {
         }
     }
 
+    var playerWinsCount = 0;
+    var npcWinsCount = 0;
+
     function displayResult(argPlayerMove, argComputerMove) {
         console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-        if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+        if (
+            (argPlayerMove == 'papier' && argComputerMove == 'kamień') || 
+            (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') || 
+            (argPlayerMove == 'nożyce' && argComputerMove == 'papier')) 
+        {
             playerWinsCount = playerWinsCount + 1;
             printMessage('Wygrywasz!');
-        } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-            playerWinsCount = playerWinsCount + 1;
-            printMessage('Wygrywasz!');
-        } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-            playerWinsCount = playerWinsCount + 1;
-            printMessage('Wygrywasz!');
-        } else if (argPlayerMove == argComputerMove) {
+        }
+        else if (argPlayerMove == argComputerMove) {
             printMessage('Remis');
         } else {
             npcWinsCount = npcWinsCount + 1;
