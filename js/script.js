@@ -1,10 +1,10 @@
-var argButtonName, buttonKamien, buttonNozyce, buttonPapier; 
+var argButtonName; 
 var playerWinsCount = 0;
 var npcWinsCount = 0;
 
-buttonKamien = document.getElementById('button-rock');
-buttonPapier = document.getElementById('button-paper');
-buttonNozyce = document.getElementById('button-scissors');
+let buttonKamien = document.getElementById('button-rock');
+let buttonPapier = document.getElementById('button-paper');
+let buttonNozyce = document.getElementById('button-scissors');
 
 function buttonClicked(argButtonName) {
   clearMessages();
