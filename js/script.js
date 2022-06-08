@@ -23,8 +23,8 @@ function buttonClicked(argButtonName) {
         }
     }
 
-    var playerWinsCount = 0;
-    var npcWinsCount = 0;
+    let playerWinsCount = 0;
+    let npcWinsCount = 0;
 
     function displayResult(argPlayerMove, argComputerMove) {
         console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
